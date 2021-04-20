@@ -74,12 +74,13 @@ app.get('/testimonials', (req, res) => {
         })
 })
 
-app.post('/addAdmin', (req, res) => {
+app.post('/makeAdmin', (req, res) => {
     const admin = req.body;
     adminCollection.insertOne(admin)
         .then(result => {
             res.send(result.insertedCount > 0);
         })
+    
 })
 
 app.get('/admin', (req, res) => {
